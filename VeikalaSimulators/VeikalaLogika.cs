@@ -16,7 +16,7 @@ namespace VeikalaSimulators
         public VeikalaLogika()
         {
             Budzets = 1000m;
-            Invetars = 100;
+            Invetars = 10;
             ProduktaCena = 10m;
         }
 
