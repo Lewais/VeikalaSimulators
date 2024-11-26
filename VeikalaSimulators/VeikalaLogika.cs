@@ -12,6 +12,8 @@ namespace VeikalaSimulators
         public int Invetars { get; internal set; }
         public decimal ProduktaCena { get; set; }
         private const decimal IepirkumaCena = 5m;
+        private const decimal Ire = 300m;
+        private int simulacijas = 0;
 
         public VeikalaLogika()
         {
@@ -22,10 +24,22 @@ namespace VeikalaSimulators
 
         public string DienasSimulacija(Random random)
         {
-            int pamataPieprasijums = random.Next(10, 50);
+            simulacijas++;
+            int pamataPieprasijums = random.Next(10, 101);
             int pieprasijums = (int)(pamataPieprasijums - ProduktaCena / 2);
 
-            if (pieprasijums < 0) pieprasijums = 0;
+            if (pieprasijums < 0)
+            {
+                pieprasijums = 0;
+                return "- Šodien nav pieprasījuma, jo cena ir pārāk augsta.";
+            }
+
+            if(simulacijas == 5)
+            {
+                Budzets -= Ire;
+                simulacijas = 0;
+                return $"- Pienākusi īres diena, īres maksa {Ire} €.";
+            }
       
             int pardots = Math.Min(pieprasijums, Invetars);
             decimal dienasIenakumi = pardots * ProduktaCena;

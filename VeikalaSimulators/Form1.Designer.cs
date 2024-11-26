@@ -36,6 +36,8 @@
             this.DienasSimuletas = new System.Windows.Forms.Label();
             this.IepirkumaDaudzums = new System.Windows.Forms.TextBox();
             this.IepirktInvetaru = new System.Windows.Forms.Button();
+            this.ProduktaCena = new System.Windows.Forms.TextBox();
+            this.MainitProduktaCenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Budzets
@@ -121,10 +123,31 @@
             this.IepirktInvetaru.UseVisualStyleBackColor = true;
             this.IepirktInvetaru.Click += new System.EventHandler(this.IepirktInvetaru_Click);
             // 
+            // ProduktaCena
+            // 
+            this.ProduktaCena.Location = new System.Drawing.Point(12, 220);
+            this.ProduktaCena.MaxLength = 100;
+            this.ProduktaCena.Name = "ProduktaCena";
+            this.ProduktaCena.Size = new System.Drawing.Size(116, 23);
+            this.ProduktaCena.TabIndex = 8;
+            this.ProduktaCena.Text = "0";
+            // 
+            // MainitProduktaCenu
+            // 
+            this.MainitProduktaCenu.Location = new System.Drawing.Point(12, 249);
+            this.MainitProduktaCenu.Name = "MainitProduktaCenu";
+            this.MainitProduktaCenu.Size = new System.Drawing.Size(116, 55);
+            this.MainitProduktaCenu.TabIndex = 9;
+            this.MainitProduktaCenu.Text = "Mainīt produkta cenu";
+            this.MainitProduktaCenu.UseVisualStyleBackColor = true;
+            this.MainitProduktaCenu.Click += new System.EventHandler(this.MainitProduktaCenu_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.MainitProduktaCenu);
+            this.Controls.Add(this.ProduktaCena);
             this.Controls.Add(this.IepirktInvetaru);
             this.Controls.Add(this.IepirkumaDaudzums);
             this.Controls.Add(this.DienasSimuletas);
@@ -151,6 +174,8 @@
         private System.Windows.Forms.Label DienasSimuletas;
         private System.Windows.Forms.TextBox IepirkumaDaudzums;
         private System.Windows.Forms.Button IepirktInvetaru;
+        private System.Windows.Forms.TextBox ProduktaCena;
+        private System.Windows.Forms.Button MainitProduktaCenu;
     }
 }
 

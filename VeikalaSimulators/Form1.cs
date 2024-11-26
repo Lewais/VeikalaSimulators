@@ -30,6 +30,7 @@ namespace VeikalaSimulators
             Budzets.Text = $"Budžets: {veikals.Budzets} €";
             Inventars.Text = $"Preces invetārā: {veikals.Invetars}";
             PrecesCena.Text = $"Produkta cena: {veikals.ProduktaCena} €";
+            ProduktaCena.Text = veikals.ProduktaCena.ToString();
         }
 
         private void DienasSimulacija_Click(object sender, EventArgs e)
@@ -71,6 +72,15 @@ namespace VeikalaSimulators
                 } else {
                     MessageBox.Show("Nepietiek līdzkļu.");
                 }
+            }
+        }
+
+        private void MainitProduktaCenu_Click(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(ProduktaCena.Text, out decimal value))
+            {
+                veikals.ProduktaCena = value;
+                UpdateText();
             }
         }
     }
