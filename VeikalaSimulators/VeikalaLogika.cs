@@ -8,8 +8,8 @@ namespace VeikalaSimulators
 {
     public class VeikalaLogika
     {
-        public decimal Budzets {  get; private set; }
-        public int Invetars { get; private set; }
+        public decimal Budzets {  get; internal set; }
+        public int Invetars { get; internal set; }
         public decimal ProduktaCena { get; set; }
         private const decimal IepirkumaCena = 5m;
 
