@@ -32,7 +32,6 @@ namespace VeikalaSimulators
             PrecesCena.Text = $"Produkta cena: {veikals.ProduktaCena} €";
             ProduktaCena.Text = veikals.ProduktaCena.ToString();
             progressBar1.Value = veikals.pieprasijums;
-            label1.Text = veikals.pieprasijums.ToString();
         }
 
         private void DienasSimulacija_Click(object sender, EventArgs e)
@@ -63,11 +62,7 @@ namespace VeikalaSimulators
         private void IepirktInvetaru_Click(object sender, EventArgs e)
         {
             if (int.TryParse(IepirkumaDaudzums.Text, out int value)) {
-                if (value > 100 || value == 0)
-                {
-                    MessageBox.Show("Maksimālais iepirkuma skaits ir 1-100.");
-                }
-                else if(veikals.InvetaraIepirkums(value))
+                if(veikals.InvetaraIepirkums(value))
                 {
                     NotikumuKaste.AppendText($"+ Veiksmīgi iepirkti {value} produkti." + Environment.NewLine);
                     UpdateText();
