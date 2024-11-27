@@ -55,6 +55,8 @@ namespace VeikalaSimulators
                 DienasSimulacija.Enabled = false;
                 IepirktInvetaru.Enabled = false;
                 IepirkumaDaudzums.Enabled = false;
+                MainitProduktaCenu.Enabled = false;
+                ProduktaCena.Enabled = false;
                 simulacijas = 0;
             }
         }
@@ -77,6 +79,7 @@ namespace VeikalaSimulators
             if (decimal.TryParse(ProduktaCena.Text, out decimal value))
             {
                 veikals.ProduktaCena = value;
+                NotikumuKaste.AppendText($"+ Produkta cena veiksmīgi nomainīta uz {value} €." + Environment.NewLine);
                 UpdateText();
             }
         }
