@@ -19,17 +19,15 @@ namespace VeikalaSimulators
         public VeikalaLogika()
         {
             Budzets = 1000m;
-            Invetars = 1000;
+            Invetars = 50;
             ProduktaCena = 10m;
         }
 
         public string DienasSimulacija(Random random)
         {
             simulacijas++;
-            int pamataPieprasijums = random.Next(10, 50);
+            int pamataPieprasijums = random.Next(10, 40);
             pieprasijums = (int)(pamataPieprasijums - ProduktaCena / 2);
-
-            
 
             if (pieprasijums < 0)
             {
