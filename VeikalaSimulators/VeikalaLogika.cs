@@ -14,11 +14,12 @@ namespace VeikalaSimulators
         private const decimal IepirkumaCena = 5m;
         private const decimal Ire = 300m;
         private int simulacijas = 0;
+        public int pieprasijums = 0;
 
         public VeikalaLogika()
         {
             Budzets = 1000m;
-            Invetars = 10;
+            Invetars = 1000;
             ProduktaCena = 10m;
         }
 
@@ -26,7 +27,9 @@ namespace VeikalaSimulators
         {
             simulacijas++;
             int pamataPieprasijums = random.Next(10, 101);
-            int pieprasijums = (int)(pamataPieprasijums - ProduktaCena / 2);
+            pieprasijums = (int)(pamataPieprasijums - ProduktaCena / 2);
+
+            
 
             if (pieprasijums < 0)
             {

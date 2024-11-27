@@ -31,6 +31,8 @@ namespace VeikalaSimulators
             Inventars.Text = $"Preces invetārā: {veikals.Invetars}";
             PrecesCena.Text = $"Produkta cena: {veikals.ProduktaCena} €";
             ProduktaCena.Text = veikals.ProduktaCena.ToString();
+            progressBar1.Value = veikals.pieprasijums;
+            label1.Text = veikals.pieprasijums.ToString();
         }
 
         private void DienasSimulacija_Click(object sender, EventArgs e)
