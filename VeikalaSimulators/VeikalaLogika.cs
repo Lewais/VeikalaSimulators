@@ -26,7 +26,7 @@ namespace VeikalaSimulators
         public string DienasSimulacija(Random random)
         {
             simulacijas++;
-            int pamataPieprasijums = random.Next(10, 101);
+            int pamataPieprasijums = random.Next(10, 50);
             pieprasijums = (int)(pamataPieprasijums - ProduktaCena / 2);
 
             
